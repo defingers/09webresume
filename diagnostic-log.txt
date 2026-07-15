@@ -1,0 +1,1 @@
+﻿No log output was captured. The app may not be receiving traffic, or logging isn't enabled yet.

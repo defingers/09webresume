@@ -1,0 +1,117 @@
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 4%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 4%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 4%;
+        --primary: 226 100% 33%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 96%;
+        --secondary-foreground: 0 0% 4%;
+        --muted: 0 0% 96%;
+        --muted-foreground: 240 4% 40%;
+        --accent: 0 0% 94%;
+        --accent-foreground: 0 0% 4%;
+        --destructive: 0 84% 55%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 90%;
+        --input: 0 0% 90%;
+        --ring: 226 100% 33%;
+        --radius: 0.125rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5, h6, .font-display {
+        font-family: "Cabinet Grotesk", "IBM Plex Sans", sans-serif;
+        letter-spacing: -0.02em;
+    }
+    .font-mono {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    ::selection {
+        background: #002FA7;
+        color: #ffffff;
+    }
+}
+
+@layer components {
+    .container-x {
+        @apply mx-auto max-w-7xl px-6 md:px-10;
+    }
+    .overline {
+        @apply text-xs font-bold tracking-[0.2em] uppercase text-[#002FA7];
+        font-family: "IBM Plex Mono", monospace;
+    }
+    .section-heading {
+        @apply text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#0A0A0A];
+    }
+    .bordered {
+        @apply border border-[#E5E5E5];
+    }
+    .btn-primary {
+        @apply inline-flex items-center gap-2 bg-[#002FA7] px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#001A66] focus:outline-none focus:ring-2 focus:ring-[#002FA7] focus:ring-offset-2;
+    }
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 border border-[#0A0A0A] bg-transparent px-6 py-3 text-sm font-semibold text-[#0A0A0A] transition-colors duration-200 hover:bg-[#0A0A0A] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#002FA7] focus:ring-offset-2;
+    }
+    .grid-card {
+        @apply bordered bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#0A0A0A];
+    }
+    .stat-box {
+        @apply bordered bg-[#F7F7F8] p-6 md:p-8;
+    }
+}
+
+@media print {
+    header, footer, .no-print { display: none !important; }
+    body { background: #fff !important; color: #000 !important; }
+    section { break-inside: avoid; page-break-inside: avoid; padding: 12px 0 !important; }
+    a { color: #000 !important; text-decoration: none !important; }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+    }
+}

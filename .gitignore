@@ -1,0 +1,27 @@
+# Dependencies
+**/node_modules/
+**/__pycache__/
+*.pyc
+
+# Env files (secrets - never commit these)
+**/.env
+**/.env.*
+!**/.env.example
+
+# Build output
+app/frontend/build/
+app/frontend/.cache/
+
+# Python
+**/venv/
+**/.venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/launch.json
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,34 @@
+name: Deploy backend to Azure App Service
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/backend/**"
+      - ".github/workflows/backend-azure.yml"
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: sunil-backend-8594   # <-- change to the App Service name you create in Azure
+  WORKING_DIR: app/backend
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: ${{ env.WORKING_DIR }}
+
+      - name: Azure logout
+        if: always()
+        run: az logout
