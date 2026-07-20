@@ -2,7 +2,7 @@
 export const profile = {
   name: "Alexander J. Whitfield",
   title: "Senior IT Architect",
-  tagline: "Designing Enterprise Systems for Scale & Resilience",
+  tagline: " Enterprise Systems for Scale & Resilience",
   summary:
     "Cloud-native strategist with 15+ years shaping mission-critical platforms across banking, healthcare and retail. I translate complex business goals into pragmatic, high-availability architectures that ship — and stay shipped.",
   location: "London, United Kingdom",
